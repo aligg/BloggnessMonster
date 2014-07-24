@@ -16,4 +16,15 @@
 
 
 <a href="https://generalassemb.ly/">BEWD inspired. Project by Ali Glenesk. Rawr.</a>
+<br>
+<br>
+<br>
+
+<% @articles.each do |article| %>
+  <dl>
+    <dt><h2><%= article.title %></h2></dt>
+    <dd><%= article.text %></dd>
+    <dd><%= link_to 'Show', article_path(article) %></dd>
+  </dl>
+<% end %>
 

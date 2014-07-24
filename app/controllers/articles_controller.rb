@@ -1,8 +1,9 @@
 class ArticlesController < ApplicationController
 before_action :authenticate_user!
+# before_action :current_user
 
 	def index
-		@articles = Article.all
+		@articles = current_user.articles.all
 	end
 
 	def new
@@ -15,7 +16,7 @@ before_action :authenticate_user!
 	end
 
 	def create
- 	 	@article = Article.new(article_params)
+ 	 	@article = current_user.articles.new(article_params)
  
   		if @article.save
   		redirect_to @article
@@ -25,11 +26,11 @@ before_action :authenticate_user!
 	end
 
   	def edit
-  		@article = Article.find(params[:id])
+  		@article = current_user.articles.find(params[:id])
   	end
 
   	def update
-  		@article = Article.find(params[:id])
+  		@article = current_user.articles.find(params[:id])
  
   		if @article.update(article_params)
     	redirect_to @article
@@ -39,7 +40,7 @@ before_action :authenticate_user!
 	end
 
 	def destroy
-		@article = Article.find(params[:id])
+		@article = current_user.articles.find(params[:id])
 		@article.destroy
 
 		redirect_to articles_path
