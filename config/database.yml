@@ -9,7 +9,7 @@
 #   pool: 5
 #   timeout: 5000
 
- cat config/database.yml
+ #cat config/database.yml
 # PostgreSQL. Versions 8.2 and up are supported.
 #
 # Install the pg driver:
@@ -26,12 +26,12 @@
 # Configure Using Gemfile
 # gem 'pg'
 #
-default: &default
-  adapter: postgresql
-  encoding: unicode
-  # For details on connection pooling, see rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: 5
+# default: &default
+#   adapter: postgresql
+#   encoding: unicode
+#   # For details on connection pooling, see rails configuration guide
+#   # http://guides.rubyonrails.org/configuring.html#database-pooling
+#   pool: 5
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -47,3 +47,11 @@ production:
   database: db/production.sqlite3
   pool: 5
   timeout: 5000
+
+development:
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
+
+  #http://stackoverflow.com/questions/23336755/activerecordadapternotspecified-database-configuration-does-not-specify-adapte
