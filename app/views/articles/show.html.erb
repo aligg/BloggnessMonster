@@ -1,11 +1,14 @@
 <br>
 <p>
-  <h2><%= @article.title %></h2>
+  <h1><%= @article.title %></h1>
 </p>
  
 <p>
   <%= @article.text %>
 </p>
+<strong>
+Posted <%= time_ago_in_words(@article.created_at) %> ago
+</strong>
  <br>
 <h2>Comments</h2>
 <%= render @article.comments %>

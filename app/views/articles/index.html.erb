@@ -2,7 +2,7 @@
 
 <% @articles.each do |article| %>
   <dl>
-    <dt><h2><%= article.title %></h2></dt>
+    <dt><h1><%= article.title %></h1></dt>
     <dd><%= article.text %></dd>
     <dd><%= link_to 'Comment', article_path(article) %></dd>
     <dd><%= link_to 'Edit', edit_article_path(article) %></dd>

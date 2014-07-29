@@ -20,3 +20,4 @@ before_action :authenticate_user!
       params.require(:comment).permit(:commenter, :body)
     end
 end
+
